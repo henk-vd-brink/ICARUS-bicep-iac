@@ -7,7 +7,7 @@ param projectName string = 'icarus'
 param location string = resourceGroup().location
 
 @description('The SKU to use for the IoT Hub.')
-param skuName string = 'Free'
+param skuName string = 'F1'
 
 @description('Partitions used for the event stream.')
 param d2cPartitions int = 4
