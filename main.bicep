@@ -17,6 +17,7 @@ param d2cPartitions int = 2
 
 var iotHubName = 'iot-icarus-dev'
 var appServicePlanName = 'asp-icarus-dev'
+var webSiteName = 'app-icarus-dev'
 var storageAccountName = 'sticarusdev'
 
 var storageEndpoint = '${projectName}StorageEndpont'
@@ -51,6 +52,17 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2020-06-01' = {
     name: 'F1'
   }
   kind: 'linux'
+}
+
+resource appService 'Microsoft.Web/sites@2020-06-01' = {
+  name: webSiteName
+  location: location
+  properties: {
+    serverFarmId: appServicePlan.id
+    siteConfig: {
+      linuxFxVersion: 'DOCKER|mcr.microsoft.com/appsvc/staticsite:latest'
+    }
+  }
 }
 
 resource IoTHub 'Microsoft.Devices/IotHubs@2021-07-02' = {
