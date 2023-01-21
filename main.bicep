@@ -10,7 +10,7 @@ param location string = resourceGroup().location
 param skuName string = 'F1'
 
 @description('Partitions used for the event stream.')
-param d2cPartitions int = 4
+param d2cPartitions int = 2
 
 var iotHubName = 'iot-icarus-dev'
 var storageAccountName = 'sticarusdev'
