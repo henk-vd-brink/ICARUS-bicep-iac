@@ -1,6 +1,7 @@
 @allowed([
   'Standard_LRS'
 ])
+
 param storageSKU string = 'Standard_LRS'
 param location string = resourceGroup().location
 
