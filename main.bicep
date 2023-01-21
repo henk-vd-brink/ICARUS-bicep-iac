@@ -5,7 +5,7 @@ param storageSKU string = 'Standard_LRS'
 param location string = resourceGroup().location
 
 resource stg 'Microsoft.Storage/storageAccounts@2022-09-01' = {
-  name: 'st-icarus-dev'
+  name: 'sticarusdev'
   location: location
   sku: {
     name: storageSKU
