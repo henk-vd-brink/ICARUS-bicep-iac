@@ -9,6 +9,9 @@ param location string = resourceGroup().location
 @description('The SKU to use for the IoT Hub.')
 param skuName string = 'F1'
 
+@description('The number of IoT Hub units.')
+param skuUnits int = 1
+
 @description('Partitions used for the event stream.')
 param d2cPartitions int = 2
 
@@ -41,6 +44,7 @@ resource IoTHub 'Microsoft.Devices/IotHubs@2021-07-02' = {
   location: location
   sku: {
     name: skuName
+    capacity: skuUnits
   }
   properties: {
     eventHubEndpoints: {
