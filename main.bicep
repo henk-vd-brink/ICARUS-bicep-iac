@@ -133,3 +133,14 @@ resource IoTHub 'Microsoft.Devices/IotHubs@2021-07-02' = {
     }
   }
 }
+
+resource acrResource 'Microsoft.ContainerRegistry/registries@2021-06-01-preview' = {
+  name: 'cricarusdev'
+  location: location
+  sku: {
+    name: 'Basic'
+  }
+  properties: {
+    adminUserEnabled: false
+  }
+}
