@@ -149,7 +149,7 @@ param administratorLogin string = 'admin'
 
 @secure()
 param administratorLoginPassword string
-param serverName string
+param serverName string = 'psql-icarus-dev'
 param serverEdition string = 'Burstable'
 param skuSizeGB int = 32
 param dbInstanceType string = 'Standard_B1ms'
