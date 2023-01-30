@@ -20,5 +20,5 @@ jobs:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
         template: ./main.bicep
-        parameters: ''
+        parameters: 'administratorLoginPassword=${{ secrets.PSQL_ICARUS_DEV_ADMIN_PASSWORD }}'
         failOnStdErr: false
