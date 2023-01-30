@@ -175,9 +175,6 @@ resource serverName_resource 'Microsoft.DBforPostgreSQL/flexibleServers@2021-06-
       delegatedSubnetResourceId: (empty(virtualNetworkExternalId) ? json('null') : json('\'${virtualNetworkExternalId}/subnets/${subnetName}\''))
       privateDnsZoneArmResourceId: (empty(virtualNetworkExternalId) ? json('null') : privateDnsZoneArmResourceId)
     }
-    highAvailability: {
-      mode: haMode
-    }
     storage: {
       storageSizeGB: skuSizeGB
     }
